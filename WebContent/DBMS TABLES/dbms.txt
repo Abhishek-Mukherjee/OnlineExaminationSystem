@@ -1,0 +1,15 @@
+DATABASE NAME:	
+USER ID      :
+PASSWORD	 :
+
+----------------------------------------------TABLES:-------------------------------------------------------------
+
+client        :	name 	 email		ex_num		marks
+
+examdetails	  :	ex_num
+
+question	  : ex_num
+
+admin         : name	email		uname		pass
+
+EXAMDETAILS   : EX_NUM	UNAME	PASS	TIME	NUM_QUES	MARKS	EXDATE
