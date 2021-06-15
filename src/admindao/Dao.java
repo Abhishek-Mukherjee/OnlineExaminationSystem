@@ -26,24 +26,32 @@ public boolean Signup(String name, String email, String uname, String pass)
 {
 	
 	try {
-		Connection con = open_connection().getConnection();
+		ods = new OracleDataSource();
+		ods.setURL("jdbc:oracle:thin:@localhost:1521:xe");
+		ods.setUser("SYSTEM");
+		ods.setPassword("manager");
+		Connection con = ods.getConnection();
 		String sql = "INSERT INTO ADMIN(NAME , EMAIL, UNAME, PASS) values(?,?,?,?)";
 		PreparedStatement st = con.prepareStatement(sql);
-
 		st.setString(1, name);
 		st.setString(2, email);
 		st.setString(3, uname);
 		st.setString(4, pass);
 		int i = st.executeUpdate();
-		if(i>0) {
-			return true;
+			if(i>0)
+			{
+				return true;
+			}
+			else
+			{
+				return false;
+			}
+		} 
+		catch (Exception e)
+		{
+				return false;
 		}
-	} 
-	catch (Exception e)
-	{
-			return false;
-	}
-	return false;
+		
 }
 
 public boolean login(String uname, String pass) {
