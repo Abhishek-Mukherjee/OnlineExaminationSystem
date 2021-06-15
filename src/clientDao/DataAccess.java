@@ -23,6 +23,10 @@ static {
 
 public boolean login(String ex_num, String password) {
 	try {
+		OracleDataSource ods = new OracleDataSource();
+		ods.setURL("jdbc:oracle:thin:@localhost:1521:xe");
+		ods.setUser("SYSTEM");
+		ods.setPassword("manager");
 		Connection con = ods.getConnection();
 		String q = "select *from examdetails where ex_num=?";
 		PreparedStatement st = con.prepareStatement(q);
@@ -49,6 +53,10 @@ public boolean saveclient(String name, String email, String ex_num)
 
 		try
 		{
+			OracleDataSource ods = new OracleDataSource();
+			ods.setURL("jdbc:oracle:thin:@localhost:1521:xe");
+			ods.setUser("SYSTEM");
+			ods.setPassword("manager");
 			Connection conn = ods.getConnection();
 			String query = "insert into client(name,email,ex_num,marks) values(?,?,?,?)";
 			PreparedStatement st = conn.prepareStatement(query);
@@ -71,6 +79,10 @@ public boolean saveclient(String name, String email, String ex_num)
 public ResultSet showques(String ex_num) {
 	ResultSet rs=null;
 	try {
+		OracleDataSource ods = new OracleDataSource();
+		ods.setURL("jdbc:oracle:thin:@localhost:1521:xe");
+		ods.setUser("SYSTEM");
+		ods.setPassword("manager");
 		Connection conn = ods.getConnection();
 		String sql = "select *from question where ex_num=?";
 		PreparedStatement st =conn.prepareStatement(sql);
@@ -88,6 +100,10 @@ public ResultSet marks0feach(String ex_num)
 	ResultSet rs = null;
 	try 
 	{
+		OracleDataSource ods = new OracleDataSource();
+		ods.setURL("jdbc:oracle:thin:@localhost:1521:xe");
+		ods.setUser("SYSTEM");
+		ods.setPassword("manager");
 		Connection con = ods.getConnection();
 		String sql = "select * from examdetails where ex_num=?";
 		PreparedStatement stmt = con.prepareStatement(sql);

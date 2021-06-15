@@ -31,7 +31,8 @@ public class clientdetails extends HttpServlet {
 			HttpSession ses = request.getSession();
 			ses.setAttribute("email", email);
 			response.sendRedirect("clientquestion.jsp");
-		}else {
+		}
+		else {
 			out.println("please correct your information");
 		}
 	}
