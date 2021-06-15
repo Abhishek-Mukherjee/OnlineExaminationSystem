@@ -49,7 +49,7 @@
 
 <!-- &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& QUESTION SECTION &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& -->
 
-<div class="row">
+<div class="row"> 
 	<div class="col-md-offset-3 col-md-6">
 		<form method="post" action="clientquestion">
 			<%
