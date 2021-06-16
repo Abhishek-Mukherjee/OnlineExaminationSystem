@@ -191,7 +191,7 @@ public ResultSet fetchques(String ex_num)
 		ods.setPassword("manager");
 		Connection con = ods.getConnection();
 		String Sql = "Select *from question where ex_num=?";
-		PreparedStatement st = con.prepareStatement(Sql);
+		PreparedStatement st = con.prepareStatement(Sql,ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_READ_ONLY);
 		st.setString(1, ex_num);
 		rs = st.executeQuery();
 	}

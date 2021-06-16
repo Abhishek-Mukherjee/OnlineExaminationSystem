@@ -5,21 +5,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>h</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
-	<style type="text/css">	
-	div{
-	  background-color:grey;
-	  color: white;
-	  font-size:20px;
-	  text-align:center;
-	  width: 100px;
-	  height: 10px;
-	  padding: 60px;
-	  float: right;
-	}
-	</style>
+	<title>EXAM</title>
 </head>
 <body>
 
@@ -33,24 +19,8 @@
 	}else{
 %>
 
-
-<div class="container-fluid" style="background-color: grey;">
-	<DIV class="row">
-		<div class="col-md-offset-2 col-md-10">
-			<h1 style="letter-spacing: .8em; color: white;">ONLINE EXAMINATION</h1>
-		</div>
-	</DIV>
-	<div class="row">
-		<div class="col-md-offset-4">
-			<h1 style="letter-spacing: .8em; color: white;">SYSTEM</h1>
-		</div>
-	</div>
-</div>
-
 <!-- &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& QUESTION SECTION &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& -->
 
-<div class="row"> 
-	<div class="col-md-offset-3 col-md-6">
 		<form method="post" action="clientquestion">
 			<%
 			//##################################### MAIN CODE STARTS HERE #############################
@@ -83,15 +53,5 @@
 			%>
 			<input type="submit" value="Submit">
 			</form>				
-	</div>
-</div>
-
-
-
-<div class="container-fluid" style="background-color: grey;">
-	<h3>Developed By RS QUBE</h3>
-</div>
-<script type="text/javascript" src="bootstrap/js/jquery.js"></script>
-<script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
 </body>
 </html>

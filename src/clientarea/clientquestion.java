@@ -57,7 +57,6 @@ public class clientquestion extends HttpServlet {
 				finally 
 				{
 					ResultSet mark = object.marks0feach(ex_num);
-					
 					try {
 						mark.next();
 						marks = correct*mark.getInt(6);
@@ -65,22 +64,16 @@ public class clientquestion extends HttpServlet {
 						{
 							out.println("successfully updated the record");
 						}else {
-							out.println("failed updated the record");
+							out.println("failed to updated the record");
 
 						}
 					} catch (SQLException e) {
 						System.out.println(e);
-					}
-					
+					}	
 				}
-		
-//			out.println("correct = "+correct);
-//			out.println("wrong = "+wrong);
-//			out.println("not attend = "+notattend);
-//			out.println("total marks = "+marks);
 				out.println("Thank you,");
 				out.println("you may leave now");
-			session.removeAttribute("ex_num");
-			session.invalidate();
+				session.removeAttribute("ex_num");
+				session.invalidate();
 			}
 }
