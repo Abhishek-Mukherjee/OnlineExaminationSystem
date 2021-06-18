@@ -14,7 +14,7 @@
 	 response.setHeader("Cache-Control","no-cache,no-store,must-revalidate");
 	response.setHeader("Pragma", "no-cache");
 	response.setHeader("Expires", "0");
-	if(session.getAttribute("ex_num")==null){
+	if(session.getAttribute("ex_num")==null ){
 		response.sendRedirect("Clientlogin.jsp");
 	}else{
 %>
@@ -41,10 +41,10 @@
 				<legend>Question</legend>
 				<label><h2><%=rs.getString(3) %></h2></label>
 				
-				<div class="checkbox"><label><input type="checkbox" name="question<%= t %>" value="1"><%=rs.getString(4) %></label></div>
-				<div class="checkbox"><label><input type="checkbox" name="question<%= t %>" value="2"><%=rs.getString(5) %></label></div>
-				<div class="checkbox"><label><input type="checkbox" name="question<%= t %>" value="3"><%=rs.getString(6) %></label></div>
-				<div class="checkbox"><label><input type="checkbox" name="question<%= t %>" value="4"><%=rs.getString(7) %></label></div>
+				<div class="checkbox"><label><input type="radio" name="question<%= t %>" value="1"><%=rs.getString(4) %></label></div>
+				<div class="checkbox"><label><input type="radio" name="question<%= t %>" value="2"><%=rs.getString(5) %></label></div>
+				<div class="checkbox"><label><input type="radio" name="question<%= t %>" value="3"><%=rs.getString(6) %></label></div>
+				<div class="checkbox"><label><input type="radio" name="question<%= t %>" value="4"><%=rs.getString(7) %></label></div>
 			</fieldset>
 			<%
 					t++;

@@ -25,10 +25,10 @@ public boolean Signup(String name, String email, String uname, String pass)
 {
 	
 	try {
-		OracleDataSource ods = new OracleDataSource();
-		ods.setURL("jdbc:oracle:thin:@localhost:1521:xe");
-		ods.setUser("SYSTEM");
-		ods.setPassword("manager");
+//		OracleDataSource ods = new OracleDataSource();
+//		ods.setURL("jdbc:oracle:thin:@localhost:1521:xe");
+//		ods.setUser("SYSTEM");
+//		ods.setPassword("manager");
 		Connection con = ods.getConnection();
 		String sql = "INSERT INTO ADMIN(NAME , EMAIL, UNAME, PASS) VALUES(?,?,?,?)";
 		PreparedStatement st = con.prepareStatement(sql);
@@ -51,10 +51,10 @@ public boolean Signup(String name, String email, String uname, String pass)
 
 public boolean login(String uname, String pass) {
 	try {
-		OracleDataSource ods = new OracleDataSource();
-		ods.setURL("jdbc:oracle:thin:@localhost:1521:xe");
-		ods.setUser("SYSTEM");
-		ods.setPassword("manager");
+//		OracleDataSource ods = new OracleDataSource();
+//		ods.setURL("jdbc:oracle:thin:@localhost:1521:xe");
+//		ods.setUser("SYSTEM");
+//		ods.setPassword("manager");
 		Connection conn = ods.getConnection();
 		String q = "SELECT *FROM ADMIN WHERE UNAME=?";
 		PreparedStatement st = conn.prepareStatement(q);

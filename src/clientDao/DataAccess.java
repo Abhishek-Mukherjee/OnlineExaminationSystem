@@ -15,18 +15,27 @@ public class DataAccess {
 static {
 	try {
 		ods = new OracleDataSource();
-		ods.setURL("jdbc:oracle:thin:system/12345@localhost:1521:xe");
-	} 
-	catch (Exception e){System.out.println(e);}
-}
-
-
-public boolean login(String ex_num, String password) {
-	try {
-		OracleDataSource ods = new OracleDataSource();
 		ods.setURL("jdbc:oracle:thin:@localhost:1521:xe");
 		ods.setUser("SYSTEM");
 		ods.setPassword("manager");
+	} 
+	catch (Exception e){System.out.println(e);}
+}
+//public OracleDataSource connectionOds() throws SQLException
+//{
+//	OracleDataSource ods = new OracleDataSource();
+//	ods.setURL("jdbc:oracle:thin:@localhost:1521:xe");
+//	ods.setUser("SYSTEM");
+//	ods.setPassword("manager");
+//	return ods;
+//}
+
+public boolean login(String ex_num, String password) {
+	try {
+//		OracleDataSource ods = new OracleDataSource();
+//		ods.setURL("jdbc:oracle:thin:@localhost:1521:xe");
+//		ods.setUser("SYSTEM");
+//		ods.setPassword("manager");
 		Connection con = ods.getConnection();
 		String q = "select *from examdetails where ex_num=?";
 		PreparedStatement st = con.prepareStatement(q);
@@ -53,10 +62,10 @@ public boolean saveclient(String name, String email, String ex_num)
 
 		try
 		{
-			OracleDataSource ods = new OracleDataSource();
-			ods.setURL("jdbc:oracle:thin:@localhost:1521:xe");
-			ods.setUser("SYSTEM");
-			ods.setPassword("manager");
+//			OracleDataSource ods = new OracleDataSource();
+//			ods.setURL("jdbc:oracle:thin:@localhost:1521:xe");
+//			ods.setUser("SYSTEM");
+//			ods.setPassword("manager");
 			Connection conn = ods.getConnection();
 			String query = "insert into client(name,email,ex_num,marks) values(?,?,?,?)";
 			PreparedStatement st = conn.prepareStatement(query);
